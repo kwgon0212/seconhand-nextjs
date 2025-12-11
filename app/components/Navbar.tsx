@@ -4,8 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import NavItem from "./NavItem";
 import { Minus, Plus } from "lucide-react";
+import { User } from "@prisma/client";
 
-const Navbar = () => {
+interface NavbarProps {
+  user: User | null;
+}
+
+const Navbar = ({ user }: NavbarProps) => {
   const [menu, setMenu] = useState(false);
 
   const handleMenu = () => setMenu(!menu);
@@ -25,11 +30,13 @@ const Navbar = () => {
         </div>
 
         <div className="hidden text-2xl sm:block">
-          <NavItem />
+          <NavItem user={user} />
         </div>
       </div>
 
-      <div className="block sm:hidden">{menu && <NavItem mobile />}</div>
+      <div className="block sm:hidden">
+        {menu && <NavItem mobile user={user} />}
+      </div>
     </nav>
   );
 };
