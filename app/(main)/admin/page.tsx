@@ -1,7 +1,7 @@
 import React from "react";
 
 const AdminPage = () => {
-  return <div>AdminPage</div>;
+  return <div>관리자 페이지</div>;
 };
 
 export default AdminPage;

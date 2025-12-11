@@ -14,7 +14,10 @@ const Navbar = () => {
     <nav className="relative z-10 w-full text-gray-800 bg-white border-b border-gray-200 shadow-sm">
       <div className="flex items-center justify-between mx-5 sm:mx-10 lg:mx-20">
         <div className="flex items-center text-2xl h-14">
-          <Link href={"/"}>logo</Link>
+          <Link href={"/"} className="flex items-center gap-2">
+            <div className="size-8 rounded-md bg-black" />
+            <h1 className="text-2xl">SecondHand</h1>
+          </Link>
         </div>
 
         <div className="text-2xl sm:hidden flex items-center">

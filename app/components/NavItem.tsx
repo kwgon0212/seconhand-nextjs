@@ -13,17 +13,17 @@ const NavItem = ({ mobile }: { mobile?: boolean }) => {
       )}
     >
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <Link href={"/admin"}>Admin</Link>
+        <Link href={"/admin"}>관리자</Link>
       </li>
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <Link href={"/user"}>User</Link>
+        <Link href={"/user"}>사용자</Link>
       </li>
 
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
         {session?.user ? (
-          <button onClick={() => signOut()}>Logout</button>
+          <button onClick={() => signOut()}>로그아웃</button>
         ) : (
-          <button onClick={() => signIn()}>Login</button>
+          <button onClick={() => signIn()}>로그인</button>
         )}
       </li>
     </ul>
