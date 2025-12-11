@@ -18,11 +18,13 @@ const NavItem = ({ mobile }: { mobile?: boolean }) => {
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
         <Link href={"/user"}>User</Link>
       </li>
+
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <button onClick={() => signIn()}>Login</button>
-      </li>
-      <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <button onClick={() => signOut()}>Logout</button>
+        {session?.user ? (
+          <button onClick={() => signOut()}>Logout</button>
+        ) : (
+          <button onClick={() => signIn()}>Login</button>
+        )}
       </li>
     </ul>
   );
