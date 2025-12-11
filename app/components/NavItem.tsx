@@ -1,8 +1,10 @@
 import clsx from "clsx";
 import Link from "next/link";
-import React from "react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const NavItem = ({ mobile }: { mobile?: boolean }) => {
+  const { data: session, status } = useSession();
+  console.log(session?.user);
   return (
     <ul
       className={clsx(
@@ -17,10 +19,10 @@ const NavItem = ({ mobile }: { mobile?: boolean }) => {
         <Link href={"/user"}>User</Link>
       </li>
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <button>Login</button>
+        <button onClick={() => signIn()}>Login</button>
       </li>
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <button>Logout</button>
+        <button onClick={() => signOut()}>Logout</button>
       </li>
     </ul>
   );
