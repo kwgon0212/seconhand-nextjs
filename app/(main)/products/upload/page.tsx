@@ -10,12 +10,15 @@ import ImageUpload from "@/app/components/ImageUpload";
 import { categories } from "@/app/components/categories/Categories";
 import CategoryInput from "@/app/components/categories/CategoryInput";
 import dynamic from "next/dynamic";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 const KakaoMap = dynamic(() => import("@/app/components/KakaoMap"), {
   ssr: false,
 });
 
 const ProductUploadPage = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const {
     register,
@@ -42,7 +45,18 @@ const ProductUploadPage = () => {
   const lng = watch("lng");
   const setCustomValue = (id: string, value: unknown) => setValue(id, value);
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {};
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    setIsLoading(true);
+
+    try {
+      const res = await axios.post("/api/products", data);
+      router.push(`/products/${res.data.id}`);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-linear-to-br from-indigo-50 via-white to-purple-50 py-12">
