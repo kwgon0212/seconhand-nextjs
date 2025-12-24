@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export { default } from "next-auth/middleware";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const session = await getToken({ req, secret: process.env.JWT_SECRET });
   const pathName = req.nextUrl.pathname;
 

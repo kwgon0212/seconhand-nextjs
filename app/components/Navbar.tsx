@@ -5,6 +5,7 @@ import { useState } from "react";
 import NavItem from "./NavItem";
 import { Minus, Plus } from "lucide-react";
 import { User } from "@prisma/client";
+import Image from "next/image";
 
 interface NavbarProps {
   user: User | null;
@@ -20,7 +21,13 @@ const Navbar = ({ user }: NavbarProps) => {
       <div className="flex items-center justify-between mx-5 sm:mx-10 lg:mx-20">
         <div className="flex items-center text-2xl h-14">
           <Link href={"/"} className="flex items-center gap-2">
-            <div className="size-8 rounded-md bg-black" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={40}
+              height={40}
+              className="object-cover"
+            />
             <h1 className="text-2xl">SecondHand</h1>
           </Link>
         </div>

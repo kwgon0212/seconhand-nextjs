@@ -17,7 +17,7 @@ const Input = ({
   label,
   type = "text",
   disabled,
-  formatPrice,
+  formatPrice = false,
   register,
   required,
   errors,

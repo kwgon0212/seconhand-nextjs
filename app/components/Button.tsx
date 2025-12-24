@@ -32,7 +32,7 @@ const Button = ({
         small ? "py-2.5 text-sm border" : "py-4 text-base border-2 shadow-lg",
         outline
           ? "bg-white border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-300 hover:border-gray-400 hover:shadow-xl"
-          : "bg-gradient-to-r from-indigo-600 to-purple-600 border-transparent text-white hover:from-indigo-700 hover:to-purple-700 focus:ring-indigo-500 shadow-indigo-500/50",
+          : "bg-linear-to-r from-indigo-600 to-purple-600 border-transparent text-white hover:from-indigo-700 hover:to-purple-700 focus:ring-indigo-500 shadow-indigo-500/50",
         disabled && "opacity-70 cursor-not-allowed hover:scale-100",
         small ? "w-1/4" : "w-full"
       )}

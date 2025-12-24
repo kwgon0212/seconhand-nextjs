@@ -42,36 +42,36 @@ const RegisterPage = () => {
         <div className="bg-white/80 backdrop-blur-xl py-10 px-8 shadow-2xl shadow-indigo-500/10 rounded-3xl border border-white/20">
           <h2 className="text-center text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-8">
             계정 만들기
-          </h2>
+        </h2>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <Input
+        <Input
               id="name"
               label="이름"
               type="text"
-              disabled={isLoading}
-              register={register}
-              errors={errors}
-              required
-            />
-            <Input
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
               id="email"
               label="이메일"
               type="email"
-              disabled={isLoading}
-              register={register}
-              errors={errors}
-              required
-            />
-            <Input
-              id="password"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id="password"
               label="비밀번호"
-              type="password"
-              disabled={isLoading}
-              register={register}
-              errors={errors}
-              required
-            />
+          type="password"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
 
             <div className="pt-2">
               <Button
@@ -89,10 +89,10 @@ const RegisterPage = () => {
                   className="font-semibold text-indigo-600 hover:text-indigo-500 transition-colors duration-200 hover:underline"
                 >
                   로그인
-                </Link>
-              </p>
-            </div>
-          </form>
+            </Link>
+          </p>
+        </div>
+      </form>
         </div>
       </div>
     </section>
