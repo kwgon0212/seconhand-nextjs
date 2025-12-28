@@ -2,11 +2,13 @@ import { Product, User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import HeartButton from "./HeartButton";
+import { fromNow } from "../libs/dayjs";
 
 interface ProductCardProps {
   currentUser?: User | null;
   data: Product;
 }
+
 const ProductCard = ({ data, currentUser }: ProductCardProps) => {
   const formattedPrice = new Intl.NumberFormat("ko-KR").format(data.price);
 
@@ -44,6 +46,12 @@ const ProductCard = ({ data, currentUser }: ProductCardProps) => {
           <div className="flex items-center justify-between">
             <p className="text-lg font-bold text-gray-900">
               {formattedPrice}원
+            </p>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-semibold text-gray-400">
+              {fromNow(data.createdAt)}
             </p>
           </div>
         </div>

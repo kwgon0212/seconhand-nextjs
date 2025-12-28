@@ -1,4 +1,4 @@
-import getCurrentUser from "../actions/getCurrentUser";
+import getCurrentUser from "@/app/actions/getCurrentUser";
 
 const UserPage = async () => {
   const userData = await getCurrentUser();
