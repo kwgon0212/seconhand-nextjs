@@ -25,7 +25,7 @@ const EmptyState = ({
             outline
             label="모든 필터 제거"
             onClick={() => {
-              router.refresh();
+              router.replace("/");
             }}
           />
         </div>

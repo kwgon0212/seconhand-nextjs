@@ -1,7 +1,11 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import { FaSkiing } from "react-icons/fa";
 import { GiBoatFishing, GiIsland, GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import CategoryBox from "./CategoryBox";
 
 export const categories = [
   {
@@ -53,3 +57,27 @@ export const categories = [
     description: "중고차 카테고리입니다.",
   },
 ];
+
+const Categories = () => {
+  const params = useSearchParams();
+
+  const category = params?.get("category");
+
+  return (
+    <div className="w-full py-4 px-10">
+      <div className="flex items-center gap-3 overflow-x-auto py-3 px-2 scrollbar-hide">
+        {categories.map((item) => (
+          <CategoryBox
+            key={item.label}
+            label={item.label}
+            selected={category === item.path}
+            icon={item.icon}
+            path={item.path}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Categories;
