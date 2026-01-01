@@ -6,7 +6,7 @@ import Container from "../components/Container";
 import EmptyState from "../components/EmptyState";
 import FloatingActionButton from "../components/FloatingActionButton";
 import Pagination from "../components/Pagination";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/products/ProductCard";
 
 interface HomeProps {
   searchParams: Promise<ProductParams>;

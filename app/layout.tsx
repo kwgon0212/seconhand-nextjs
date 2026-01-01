@@ -33,7 +33,7 @@ export default async function RootLayout({
       >
         <ToastContainer autoClose={2000} />
         <Navbar user={currentUser} />
-        {children}
+        <div className="pt-14">{children}</div>
       </body>
     </html>
   );

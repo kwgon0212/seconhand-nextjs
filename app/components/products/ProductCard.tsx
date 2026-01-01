@@ -1,8 +1,8 @@
 import { Product, User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import HeartButton from "./HeartButton";
-import { fromNow } from "../libs/dayjs";
+import HeartButton from "../HeartButton";
+import { fromNow } from "../../libs/dayjs";
 
 interface ProductCardProps {
   currentUser?: User | null;
