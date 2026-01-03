@@ -16,15 +16,21 @@ const NavItem = ({ mobile, user }: NavItemProps) => {
         mobile && "flex-col h-full"
       )}
     >
-      <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
-        <Link href={"/admin"}>관리자</Link>
-      </li>
+      {user?.userType === "Admin" && (
+        <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
+          <Link href={"/admin"}>관리자</Link>
+        </li>
+      )}
 
       {user && (
         <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
           <Link href={"/user"}>{user.name}님</Link>
         </li>
       )}
+
+      <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
+        <Link href={"/chat"}>채팅</Link>
+      </li>
 
       <li className="py-2 text-center cursor-pointer hover:text-indigo-600 transition-colors">
         {user ? (

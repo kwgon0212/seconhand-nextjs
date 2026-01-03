@@ -23,7 +23,7 @@ const ProductInfo = ({ description, user, createdAt }: ProductInfoProps) => {
       <div className="pt-6 border-t border-gray-200">
         <div className="text-sm font-semibold text-gray-900 mb-3">판매자</div>
         <div className="flex items-center gap-3">
-          <Avatar user={user} size={48} />
+          <Avatar image={user.image} name={user.name} size={48} />
           <div>
             <div className="text-gray-900 font-medium">{user.name}</div>
             <div className="text-xs text-gray-400">{fromNow(createdAt)}</div>

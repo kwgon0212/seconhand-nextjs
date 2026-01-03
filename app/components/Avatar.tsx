@@ -1,28 +1,26 @@
 import Image from "next/image";
-import { User } from "@prisma/client";
 
 interface AvatarProps {
-  user: User;
+  image?: string | null;
+  name?: string | null;
   size?: number;
 }
 
-const Avatar = ({ user, size = 40 }: AvatarProps) => {
-  if (user.image) {
+const Avatar = ({ image, name, size = 40 }: AvatarProps) => {
+  if (image) {
     return (
-      <div className="relative overflow-hidden rounded-full" style={{ width: size, height: size }}>
-        <Image
-          src={user.image}
-          alt={user.name || "User"}
-          fill
-          className="object-cover"
-        />
+      <div
+        className="relative overflow-hidden rounded-full"
+        style={{ width: size, height: size }}
+      >
+        <Image src={image} alt={name || "User"} fill className="object-cover" />
       </div>
     );
   }
 
   // 이미지가 없을 때 초기 표시
-  const initials = user.name
-    ? user.name
+  const initials = name
+    ? name
         .split(" ")
         .map((n) => n[0])
         .join("")
@@ -41,4 +39,3 @@ const Avatar = ({ user, size = 40 }: AvatarProps) => {
 };
 
 export default Avatar;
-
